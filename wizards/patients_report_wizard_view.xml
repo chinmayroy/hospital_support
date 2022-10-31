@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+
+        <!-- Form View -->
+        <record id="patients_report_wizard_form_view" model="ir.ui.view">
+            <field name="name">patients.report.wizard.form.view</field>
+            <field name="model">patients.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Print Patients Full Report">
+                        <group>
+                            <group>
+                            <field name="patient_sl_no"/>
+                            </group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button string="Print" name="action_print_patients_report" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-default" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+
+       <!-- Action View -->
+        <record id="action_print_patients_report_wizard" model="ir.actions.act_window">
+            <field name="name">Print Patients Information</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">patients.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

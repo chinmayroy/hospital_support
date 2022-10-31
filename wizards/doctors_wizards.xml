@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <!-- Form View -->
+        <record id="doctors_wizards_form_view" model="ir.ui.view">
+            <field name="name">doctors.wizards.form.view</field>
+            <field name="model">doctors.wizards</field>
+            <field name="priority" eval="7"/>
+            <field name="arch" type="xml">
+                <form string="Edit Doctors Information">
+                        <group>
+                            <field name="doctors_hospital"/>
+                        </group>
+                        <footer>
+                            <button string="Add New Hospital" name="action_add_hospital" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-default" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+
+       <!-- Action View -->
+        <record id="doctors_wizards_action" model="ir.actions.act_window">
+            <field name="name">Edit Doctors Information</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">doctors.wizards</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_hospital_support_patients_informations,hospital.support.patients.informations,model_hospital_support_patients_informations,base.group_user,1,1,1,1
+access_hospital_support_doctors_informations,hospital.support.doctors.informations,model_hospital_support_doctors_informations,base.group_user,1,1,1,1
+access_hospital_support_specialists_informations,hospital.support.specialists.informations,model_hospital_support_specialists_informations,base.group_user,1,1,1,1
+access_doctors_wizards,doctors.wizards,model_doctors_wizards,base.group_user,1,1,1,1
+access_patients_report_wizard,patients.report.wizard,model_patients_report_wizard,base.group_user,1,1,1,1

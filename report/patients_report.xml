@@ -1,0 +1,95 @@
+<odoo>
+    <data>
+        <report 
+                id="action_patients_report"
+                model="hospital.support.patients.informations"
+                report_type="qweb-html"
+                string="Patients Information"
+                name="hospital_support.patients_report_template"
+                file="hospital_support.patients_report_template"
+                paperformat="hospital_support.patients_report_portrait"
+                attachment_use="False"
+            />
+
+
+        <template id="patients_report_template">
+                <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            
+                            <div class="oe_structure"/>
+                            
+
+                            <!-- Report Title -->
+                            <div class="row" style="margin-bottom: 30px !important; text-decoration: underline;">
+                                <div class="col-xs-12 col-md-12">
+                                    <h2 class="text-center">Patients Information Report</h2>
+                                </div>
+                            </div>
+
+                            
+                            <!-- Report Header -->
+                            <div class="row" style="margin-bottom: 30px !important;">
+                                <div class="col-xs-12 col-md-12">
+                                    <p>SL No: <b><span t-if="docs[0].sl_no" t-esc="docs[0].sl_no"/></b></p>
+                                    <p>Name: <b><span t-if="docs[0].name" t-esc="docs[0].name"/></b></p>
+                                    <p>Address: <b><span t-if="docs[0].address" t-esc="docs[0].address"/></b></p>
+                                </div>
+                            </div>
+
+                            
+                            <!-- Report Body -->
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Diseases</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="docs" t-as="line">
+                                        <td>
+                                            <span t-if="docs[0].diseases" t-field="line.diseases"/>
+                                        </td>
+                                        <td>
+                                            <span t-if="docs[0].description" t-field="line.description"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <!-- Table for Doctors -->
+                            <table class="table table-condensed">
+                                <thead>
+                                    <h6>Doctor List</h6>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Doctor Name</th>
+                                        <th>Degrees</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="docs" t-as="line">
+                                        <td>
+                                            <span t-if="docs[0].diseases" t-field="line.diseases"/>
+                                        </td>
+                                        <td>
+                                            <span t-if="docs[0].description" t-field="line.description"/>
+                                        </td>
+                                        <td>
+                                            <span t-if="docs[0].description" t-field="line.description"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="oe_structure"/>
+
+                        </div>
+                    </t>
+                </t>
+            </template>
+
+    </data>
+</odoo>

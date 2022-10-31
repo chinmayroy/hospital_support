@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+
+        <!-- Search View -->
+        <record id="patients_informations_search_view" model="ir.ui.view">
+            <field name="name">hospital.support.patients.informations.search.view</field>
+            <field name="model">hospital.support.patients.informations</field>
+            <field name="arch" type="xml">
+                <search string="Patients Informations">
+                    <field name="name" string="Doctor Name" filter_domain="[('name','ilike',self)]"/>
+                    <field name="sl_no" string="Sl No" filter_domain="[('sl_no','ilike',self)]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Kanban View -->
+        <record id="patients_informations_kanban_view" model="ir.ui.view">
+            <field name="name">hospital.support.patients.informations.kanban</field>
+            <field name="model">hospital.support.patients.informations</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban" string="Patients Informations">
+                    <field name="name"/>
+                    <field name="sl_no"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_content oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li><p>SL No: <field name="sl_no"/></p></li>
+                                        <li><p>Diseases: <field name="diseases"/></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="patients_informations_tree_view" model="ir.ui.view">
+            <field name="name">hospital.support.patients.informations.tree.view</field>
+            <field name="model">hospital.support.patients.informations</field>
+            <field name="priority" eval="7" />
+            <field name="arch" type="xml">
+                <tree string="Patients Informations">
+                    <field name="sl_no"/>
+                    <field name="name"/>
+                    <field name="diseases"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="patients_informations_form_view" model="ir.ui.view">
+            <field name="name">hospital.support.patients.informations.form.view</field>
+            <field name="model">hospital.support.patients.informations</field>
+            <field name="priority" eval="7"/>
+            <field name="arch" type="xml">
+                <form string="patients Informations Form View">
+                    <sheet>
+                        <h3>
+                            <label for="name" string="Patients Name"/><br/>
+                            <field name="name"/>
+                        </h3>
+                            <group>
+                                <group>
+                                <field name="sl_no"/>
+                                <field name="mobile"/>
+                                <field name="address"/>
+                                </group>
+                                <group>
+                                <field name="diseases"/>
+                                <field name="description"/>
+                                </group>
+                                <label for="patients_under" string="Doctors List" />
+                                <field name="patients_under"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

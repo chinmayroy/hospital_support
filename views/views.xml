@@ -1,0 +1,71 @@
+<odoo>
+  <data>
+
+<!-- actions opening views on models -->
+
+    <!-- Patients Area -->
+    <record model="ir.actions.act_window" id="hospital_support.action_patients">
+      <field name="name">Patients List</field>
+      <field name="res_model">hospital.support.patients.informations</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create o_view_nocontent_smiling_face">Add a new record.</p>
+      </field>
+    </record>
+
+    <!-- Doctors Area -->
+    <record model="ir.actions.act_window" id="hospital_support.action_doctors">
+      <field name="name">Doctors List</field>
+      <field name="res_model">hospital.support.doctors.informations</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create o_view_nocontent_smiling_face">Add a new record.</p>
+      </field>
+    </record>
+
+    <!-- Specialists Area -->
+    <record model="ir.actions.act_window" id="hospital_support.action_specialists">
+      <field name="name">Specialists List</field>
+      <field name="res_model">hospital.support.specialists.informations</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create o_view_nocontent_smiling_face">Add a new record.</p>
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Hospital Support" id="hospital_support.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Patients" 
+    id="hospital_support.patients" 
+    parent="hospital_support.menu_root" 
+    action="hospital_support.action_patients"/>
+
+    <menuitem name="Doctors" 
+    id="hospital_support.doctors" 
+    parent="hospital_support.menu_root" 
+    action="hospital_support.action_doctors"/>
+
+    <menuitem name="Specialists" 
+    id="hospital_support.specialists" 
+    parent="hospital_support.menu_root" 
+    action="hospital_support.action_specialists"/>
+
+    <menuitem name="Reporting" 
+    id="hospital_support.reporting" 
+    parent="hospital_support.menu_root"/>
+
+    <menuitem name="Print Patients Report" 
+    id="hospital_support.print_patients_report" 
+    parent="hospital_support.reporting"
+    action="action_print_patients_report_wizard"/>
+
+
+
+
+  </data>
+</odoo>
