@@ -9,7 +9,7 @@
                 <form string="Print Patients Full Report">
                         <group>
                             <group>
-                            <field name="patient_sl_no"/>
+                            <field name="patient_name"/>
                             </group>
                             <group>
                                 <field name="date_from"/>
