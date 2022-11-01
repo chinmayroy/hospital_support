@@ -5,7 +5,7 @@ class PatientsReportWizard(models.TransientModel):
     _name = "patients.report.wizard"
     _description = "Patients Report Wizard"
     
-    patient_name = fields.Many2one("hospital.support.patients.informations", string="Patient SL No:")
+    patient_name = fields.Many2one("hospital.support.patients.informations", string="Patient Name:")
     date_from = fields.Date(string="Date From:")
     date_to = fields.Date(string="Date To:")
     
