@@ -11,7 +11,7 @@ class PatientsReportWizard(models.TransientModel):
     
 
     def action_print_patients_report(self):
-        patients_report_w = self.env['hospital.support.patients.informations'].sudo().search([('self.create_date', '=', res.parent_id), ('parent_id', '=', res.parent_id)])
+        patients_report_w = self.env['hospital.support.patients.informations'].sudo().search([('create_date', '=', self.date_from), ('create_date', '=', self.date_to)])
         # patients_report_w = self.env['hospital.support.patients.informations'].search_read()
         print("patients_report_w", patients_report_w)
         data = {
