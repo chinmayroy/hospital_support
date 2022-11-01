@@ -2,7 +2,7 @@
     <data>
         <report 
                 id="action_patients_report_wizard"
-                model="hospital.support.patients.informations"
+                model="patients.report.wizard"
                 report_type="qweb-html"
                 string="Patients Information"
                 name="hospital_support.patients_report_wizard_template"
@@ -31,7 +31,7 @@
                             <!-- Report Header -->
                             <table class="table table-condensed">
                                 <tr>
-                                    <td class="col-md-2">Patient SL No :</td>
+                                    <td class="col-md-2">Patient Name :</td>
                                     <td>                               
                                         <t t-if="form_data.get('patient_sl_no')">
                                             <t t-esc="form_data['patient_sl_no'][1]" />
